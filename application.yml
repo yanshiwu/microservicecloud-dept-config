@@ -3,15 +3,30 @@ spring:
     active:
       -dev
 ---
+server:
+  port: 8201
+
 spring:
-  profiles:
-    dev
+  profiles: dev
   application:
     name: microservicecloud-dept-dev
 
+eureka:
+  client:
+    server-url:
+      defaultZone:
+        http://eureka-dev.com:7001/eureka/
 ---
+server:
+  port: 8202
+
 spring:
-  profiles:
-    test
+  profiles: test
   application:
     name: microservicecloud-dept-test
+
+eureka:
+  client:
+    server-url:
+      defaultZone:
+        http://eureka-dev.com:7001/eureka/
